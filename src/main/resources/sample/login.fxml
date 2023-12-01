@@ -10,18 +10,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #EE4266;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #EE4266;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.controller.LoginController">
    <children>
-      <AnchorPane layoutX="-6.0" layoutY="94.0" prefHeight="314.0" prefWidth="708.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane layoutX="-6.0" layoutY="94.0" prefHeight="314.0" prefWidth="706.0" style="-fx-background-color: #ffffff;">
          <children>
-            <TextField layoutX="194.0" layoutY="79.0" prefHeight="40.0" prefWidth="319.0" promptText="Digite seu Username..">
+            <TextField fx:id="loginUsername" layoutX="194.0" layoutY="79.0" prefHeight="40.0" prefWidth="319.0" promptText="Digite seu Username..">
                <opaqueInsets>
                   <Insets bottom="100.0" />
                </opaqueInsets>
             </TextField>
-            <PasswordField layoutX="194.0" layoutY="147.0" prefHeight="40.0" prefWidth="319.0" promptText="Digite a sua Senha.." />
-            <Button layoutX="220.0" layoutY="218.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="266.0" style="-fx-background-color: #424242;" text="Login" textAlignment="CENTER" textFill="#eae7e7">
+            <PasswordField fx:id="loginPassword" layoutX="194.0" layoutY="147.0" prefHeight="40.0" prefWidth="319.0" promptText="Digite a sua Senha.." />
+            <Button fx:id="loginButton" layoutX="220.0" layoutY="218.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="266.0" style="-fx-background-color: #424242;" text="Login" textAlignment="CENTER" textFill="#eae7e7">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>
@@ -35,10 +34,10 @@
       </AnchorPane>
       <ImageView fitHeight="75.0" fitWidth="139.0" layoutX="281.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../../../Downloads/toDoList-removebg-preview.png" />
+            <Image url="@toDoList-removebg-preview.png" />
          </image>
       </ImageView>
-      <Button layoutX="556.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="118.0" style="-fx-background-color: #9a0007;" text="Inscreva-se" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="loginSignUpButton" layoutX="556.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="118.0" style="-fx-background-color: #9a0007;" text="Inscreva-se" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>

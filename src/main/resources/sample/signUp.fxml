@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.controller.SignupController">
+   <children>
+      <AnchorPane prefHeight="74.0" prefWidth="700.0" style="-fx-background-color: #EE4266;">
+         <children>
+            <ImageView fitHeight="74.0" fitWidth="149.0" layoutX="276.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@toDoList-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="signUpFirstName" layoutX="196.0" layoutY="100.0" prefHeight="31.0" prefWidth="308.0" promptText="Nome" />
+      <TextField fx:id="signUpLastName" layoutX="196.0" layoutY="146.0" prefHeight="31.0" prefWidth="308.0" promptText="Sobrenome" />
+      <TextField fx:id="signUpUsername" layoutX="195.0" layoutY="191.0" prefHeight="31.0" prefWidth="308.0" promptText="Username" />
+      <TextField fx:id="signUpLocation" layoutX="194.0" layoutY="305.0" prefHeight="31.0" prefWidth="308.0" promptText="Localização" />
+      <CheckBox fx:id="signUpCheckboxFemale" layoutX="349.0" layoutY="278.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="74.0" text="Feminino" />
+      <CheckBox fx:id="signUpCheckboxMale" layoutX="266.0" layoutY="278.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="82.0" selected="true" text="Masculino" />
+      <TextField fx:id="signUpPassword" layoutX="195.0" layoutY="235.0" prefHeight="31.0" prefWidth="308.0" promptText="Senha" />
+      <Button fx:id="signUpButton" layoutX="203.0" layoutY="354.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="294.0" style="-fx-background-color: #424242;" text="Enviar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
