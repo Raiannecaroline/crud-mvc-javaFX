@@ -10,11 +10,7 @@ public class DatabaseHandler extends Configs {
     Connection dbConnection;
 
     public Connection getDbConnection() throws ClassNotFoundException, SQLException {
-        String connectionString = "jdbc:mysql//"+ dbHost + ":"
-                + dbPort + "/"
-                + dbName;
-
-        Class.forName("com.mysql.jdbc.Driver");
+        String connectionString = "jdbc:mysql://" + dbHost + ":" + dbPort + "/" + dbName + "?useSSL=false";
 
         dbConnection = DriverManager.getConnection(connectionString, dbUser, dbPass);
 
@@ -25,13 +21,12 @@ public class DatabaseHandler extends Configs {
     public void signUpUser(String firstName, String lastName, String userName,
                            String password, String location, String gender) {
 
-        String insert = "INSERT INTO"+ Const.USERS_TABLE +"("+ Const.USERS_FIRSTNAME
-                +","+ Const.USERS_LASTNAME +","+ Const.USERS_USERNAME +","+ Const.USERS_PASSWORD
-                +","+ Const.USERS_LOCATION +","+ Const.USERS_Gender +")" + "VALUES(?,?,?,?,?,?)";
+        String insert = "INSERT INTO " + Const.USERS_TABLE + "(" + Const.USERS_FIRSTNAME
+                + "," + Const.USERS_LASTNAME + "," + Const.USERS_USERNAME + "," + Const.USERS_PASSWORD
+                + "," + Const.USERS_LOCATION + "," + Const.USERS_Gender + ")" + "VALUES(?,?,?,?,?,?)";
 
-
-        try {
-            PreparedStatement preparedStatement = getDbConnection().prepareStatement(insert);
+        try (Connection connection = getDbConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(insert)) {
 
             preparedStatement.setString(1, firstName);
             preparedStatement.setString(2, lastName);
@@ -42,10 +37,8 @@ public class DatabaseHandler extends Configs {
 
             preparedStatement.executeUpdate();
 
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
         }
     }
 
